@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convert Money | Conversor de Moedas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="card">
+    <header class="card__header">
+      <h1>Convert Money</h1>
+      <p>Conversor de moedas em tempo real</p>
+    </header>
+
+    <div class="rate-badge" id="rateBadge">
+      Carregando cotação...
+    </div>
+
+    <form class="converter" id="converterForm">
+
+      <!-- Moeda de origem -->
+      <div class="field">
+        <label for="amount">Valor</label>
+        <div class="input-group">
+          <span class="flag" id="flagFrom">🇧🇷</span>
+          <input type="number" id="amount" inputmode="decimal" step="0.01" min="0" value="1" required>
+          <select id="currencyFrom">
+            <option value="BRL">BRL</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Botão de inverter -->
+      <button type="button" class="swap-btn" id="swapBtn" aria-label="Inverter moedas">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M7 10L2 5l5-5" transform="translate(0,3)" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 5h13a4 4 0 0 1 4 4v1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M17 14l5 5-5 5" transform="translate(0,-3)" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 19H9a4 4 0 0 1-4-4v-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <!-- Moeda de destino -->
+      <div class="field">
+        <label for="result">Convertido</label>
+        <div class="input-group input-group--result">
+          <span class="flag" id="flagTo">🇺🇸</span>
+          <input type="text" id="result" readonly>
+          <select id="currencyTo">
+            <option value="USD">USD</option>
+            <option value="BRL">BRL</option>
+            <option value="EUR">EUR</option>
+          </select>
+        </div>
+      </div>
+
+    </form>
+
+    <p class="updated" id="updatedAt"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
